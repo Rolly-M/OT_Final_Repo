@@ -1,8 +1,8 @@
 name: ClusterFuzzLite
 on:
   workflow_dispatch:
-  schedule:
-  - cron: 0 */6 * * *
+#  schedule:
+#  - cron: 0 */6 * * *
 permissions: read-all
 jobs:
   BuildAddress:
@@ -76,7 +76,7 @@ jobs:
       run: >
         mv storage/corpus/encode_decode corpus.encode_decode;
         mkdir -p storage/{artifacts,corpus}/encode_decode;
-        timeout 3h build-out/encode_decode -artifact_prefix=storage/artifacts/encode_decode/
+        timeout 6h build-out/encode_decode -artifact_prefix=storage/artifacts/encode_decode/
         -timeout=600 -report_slow_units=25 -max_len=256 -len_control=0 -merge=1
         storage/corpus/encode_decode corpus.encode_decode
     - name: Upload corpus
