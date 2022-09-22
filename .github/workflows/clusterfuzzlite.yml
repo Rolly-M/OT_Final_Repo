@@ -114,6 +114,6 @@ jobs:
         || true;
         cp -u corpus.encode_decode/* storage/corpus/encode_decode
     - name: Random pause for storage sync
-      run: seq 1 60 | shuf -n 1 | xargs sleep
+      run: seq 1 90 | shuf -n 1 | xargs sleep
     - name: Upload corpus
       uses: ./.github/actions/post_fuzz
