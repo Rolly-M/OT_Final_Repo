@@ -3,7 +3,7 @@ name: Build devcontainer image
 on:
   push:
     branches:
-      - master
+      - devcontainer-prebuilt
     paths:
       - '.github/workflows/devcontainer.yml'
       - '.devcontainer/**'
