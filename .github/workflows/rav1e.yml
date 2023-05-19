@@ -25,7 +25,7 @@ jobs:
           toolchain: stable
           override: true
           components: clippy, rustfmt
-      - name: Run rustfmt now
+      - name: Run rustfmt now now
         uses: actions-rs/cargo@v1
         with:
           command: fmt
